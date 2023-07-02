@@ -9,24 +9,24 @@ export default function LayoutSideNavAdmin() {
   const router = useRouter();
 
   const onClickMember = () => {
-    router.push('http://localhost:3000/admin/admin-info')
+    router.push('http://localhost:3000/info/admin')
   }
   
   const onClickArtist = () => {
-    router.push('http://localhost:3000/admin/admin-info/artist')
+    router.push('http://localhost:3000/info/admin/artist')
   }
 
   const onClickHelp = () => {
-    router.push('http://localhost:3000/admin/admin-info/help')
+    router.push('http://localhost:3000/info/admin/help')
   }
   const onClickWork = () => {
-    router.push('http://localhost:3000/admin/admin-info/work')
+    router.push('http://localhost:3000/info/admin/work')
   }
   const onClickExhibition = () => {
-    router.push('http://localhost:3000/admin/admin-info/exhibition')
+    router.push('http://localhost:3000/info/admin/exhibition')
   }
   const onClickCommission = () => {
-    router.push('http://localhost:3000/admin/admin-info/commission')
+    router.push('http://localhost:3000/info/admin/commission')
   }
 
   return (

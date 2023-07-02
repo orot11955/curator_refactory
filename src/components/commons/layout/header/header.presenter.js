@@ -20,8 +20,8 @@ export default function LayoutHeader(props){
   })
 
   if(userGrade == 1) {
-    info = "/user/user-info";
-  } else info = "/admin/admin-info";
+    info = "/info/user";
+  } else info = "/info/admin";
 
 
     return (
@@ -31,8 +31,8 @@ export default function LayoutHeader(props){
         <C.MyProfile>
           {
             loginStatue ?
-            <><Link href="/sign/sign-out"><C.SignInMenu>로그아웃</C.SignInMenu></Link><Link href={`${info}`}><C.InfoMenu>회원정보</C.InfoMenu></Link></> 
-            : <><Link href="/sign/sign-in"><C.SignInMenu>로그인</C.SignInMenu></Link><Link href="/sign/sign-up"><C.SignupMenu>회원가입</C.SignupMenu></Link></>
+            <><Link href="/units/sign/sign-out"><C.SignInMenu>로그아웃</C.SignInMenu></Link><Link href={`${info}`}><C.InfoMenu>회원정보</C.InfoMenu></Link></> 
+            : <><Link href="/units/sign/sign-in"><C.SignInMenu>로그인</C.SignInMenu></Link><Link href="/sign/sign-up"><C.SignupMenu>회원가입</C.SignupMenu></Link></>
             
           
       
