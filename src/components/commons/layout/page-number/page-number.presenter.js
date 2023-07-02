@@ -4,7 +4,7 @@ import { faChevronRight } from "@fortawesome/free-solid-svg-icons"
 import * as C from './page-number.styles' 
 
 
-export default function LayoutPageNumber(props) {
+export default function LayoutPageNumberUI(props) {
  
   return (
     <>  

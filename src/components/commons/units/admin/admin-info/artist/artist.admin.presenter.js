@@ -1,5 +1,5 @@
 import * as C from './artist.admin.styles'
-import LayoutSideNavAdmin from '../../../../layout/side-nav-admin/side-nav-admin.presenter'
+import LayoutSideNavAdmin from '../../../../layout/side-nav-admin/side-nav-admin.container'
 import { useState, useEffect } from 'react';
 import axios from 'axios'
 import { useRouter } from 'next/router';

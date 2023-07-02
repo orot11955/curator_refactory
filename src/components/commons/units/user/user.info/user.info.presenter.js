@@ -2,7 +2,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faPlus } from '@fortawesome/free-solid-svg-icons'
 import { faEnvelope } from "@fortawesome/free-solid-svg-icons"
 import { faUser } from "@fortawesome/free-solid-svg-icons"
-import LayoutSideNav from '../../../layout/side-nav/side-nav.presenter'
+import LayoutSideNav from '../../../layout/side-nav/side-nav.container'
 import Instagram from '../../../../../../public/icons/instagram.svg'
 import * as C from './user.info.styles'
 import Link from "next/link"

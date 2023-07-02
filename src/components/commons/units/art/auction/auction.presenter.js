@@ -7,7 +7,7 @@ import axios from 'axios'
 import { useState, useEffect } from 'react'
 import { useRouter } from 'next/router'
 
-export default function AuctionView(props) {
+export default function ArtAuctionUI(props) {
 
   const back = process.env.NEXT_PUBLIC_URI
   const router = useRouter();

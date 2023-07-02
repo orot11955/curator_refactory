@@ -1,31 +1,15 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faAngleLeft } from '@fortawesome/free-solid-svg-icons'
 import { faAngleRight } from '@fortawesome/free-solid-svg-icons'
-import * as C from './body.footer.styled'
-import { useState } from 'react';
-import { useEffect } from 'react';
+import * as C from './body.slide.styled'
 
-export default function LayoutBodyFooter(props) {
-    
-    const [isSlide, setIsSlide] = useState();
-
-    useEffect(()=>{
-        setIsSlide(document.getElementById('slide'));
-      }, [])
-
-    const slideLeft = () => {
-        isSlide.style.marginLeft = '0px';
-    }
-
-    const slideRight = () => {
-      isSlide.style.marginLeft = '-1400px';
-   }
+export default function LayoutBodySlideUI(props) {
 
     return (
         <>
         <C.FootTitle>Exhibition</C.FootTitle>
         <C.DivDiv>
-          <C.LeftBtn onMouseEnter={slideLeft}><FontAwesomeIcon icon={faAngleLeft}/></C.LeftBtn>
+          <C.LeftBtn onMouseEnter={props.slideLeft}><FontAwesomeIcon icon={faAngleLeft}/></C.LeftBtn>
         <C.Div>
          <C.FootWrapper id='slide'>
             <C.ExhibitionImage1>
@@ -53,7 +37,7 @@ export default function LayoutBodyFooter(props) {
                </C.ExhibitionInfo>
             </C.ExhibitionColumn>
          </C.FootWrapper>
-         
+     
          <C.FootWrapper id='slide'>
             <C.ExhibitionImage2>
                <C.ExhibitionTitle2>김세동(Sambypen) <br/>7th 개인전 'QUIZ'</C.ExhibitionTitle2>
@@ -76,9 +60,8 @@ export default function LayoutBodyFooter(props) {
                </C.ExhibitionInfo>
             </C.ExhibitionColumn>
             </C.FootWrapper>
-         
          </C.Div>
-           <C.RightBtn onMouseEnter={slideRight}><FontAwesomeIcon icon={faAngleRight}/></C.RightBtn>
+           <C.RightBtn onMouseEnter={props.slideRight}><FontAwesomeIcon icon={faAngleRight}/></C.RightBtn>
          </C.DivDiv>
         </>
     )

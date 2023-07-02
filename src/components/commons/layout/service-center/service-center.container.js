@@ -1,6 +1,4 @@
-import LayoutPageNumber from "./page-number.presenter"
-
-export default function LayoutServiceCenterContainer() {
+export default function LayoutServiceCenter() {
 
   return(
     <>

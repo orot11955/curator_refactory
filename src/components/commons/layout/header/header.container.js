@@ -1,32 +1,32 @@
-import { useRouter } from "next/router"
 import { useState } from "react"
-import LayoutHeader from "./header.presenter"
+import LayoutHeaderUI from "./header.presenter"
+import { useState, useEffect } from "react"
+import { useCookies } from 'react-cookie'
 
-const [menu, setMenu] = useState(FontFaceSetLoadEvent)
+export default function LayoutHeader() {
 
-// 메뉴 클릭시 서브 카테고리 리스트 구현 
-export default function HeaderContainer() {
+    const [menu, setMenu] = useState(FontFaceSetLoadEvent)
+    
+    // login 판별
+    const [loginStatue, setLoginStatus] = useState();
+    const [cookies, setCookie, removeCookie] = useCookies();
+    const [userGrade, setUserGrade] = useState();
+    var info;
 
-    //
-    const onClickMenuArtist = () => {
-        
-    }
-    const onClickMenuGenre = () => {
+    useEffect(() => {
+        setLoginStatus(localStorage.getItem('loginStatus'));
+        setUserGrade(sessionStorage.getItem('userGrade'));
+    })
 
-    }
-    const onClickMenuCommission = () => {
+    if(userGrade == 1) {
+        info = "/info/user";
+    } else info = "/info/admin";
 
-    }
-    const onClickMenuExhibition = () => {
-
-    }
-
-    const onClickMenuService = () => {
-
-    }
 
     return (
-        <LayoutHeader
+        <LayoutHeaderUI
+        menu={menu}
+        cookies={cookies}
         artist={onClickMenuArtist}
         type={onClickMenuType}
         ask={onClickMenuCommission}
