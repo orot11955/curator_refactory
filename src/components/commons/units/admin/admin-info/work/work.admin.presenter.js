@@ -8,7 +8,7 @@ import Image from 'next/image';
 import { route } from 'next/dist/server/router';
 import { useRouter } from 'next/router';
 
-export default function AdminWorkView(props) {
+export default function AdminWorkInfoUI(props) {
     
     const router = useRouter();
     const back = process.env.NEXT_PUBLIC_URI

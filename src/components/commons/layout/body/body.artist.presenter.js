@@ -1,6 +1,6 @@
-import * as C from './body.header.styles' 
+import * as C from './body.artist.styles' 
 
-export default function LayoutBodyHeader(props){
+export default function LayoutBodyArtistUI(props){
 
     return (
     <>

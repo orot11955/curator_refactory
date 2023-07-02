@@ -1,9 +1,9 @@
-import AdminInfoView from "./artist.admin.presenter"
+import AdminArtistInfoUI from "./artist.admin.presenter"
 
-export default function AdminInfoContainer() {
+export default function AdminArtistInfo() {
     return (
         <>
-        <AdminInfoView/>
+        <AdminArtistInfoUI/>
         </>
     )
 }

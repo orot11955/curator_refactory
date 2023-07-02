@@ -1,38 +1,39 @@
-import LayoutSideNavAdmin from './side-nav-admin.presenter'
+import LayoutSideNavAdminUI from './side-nav-admin.presenter'
+import { useRouter } from 'next/router';
 
-export default function SideNavAdminContainer() {
+export default function LayoutSideNavAdmin() {
 
-    // const onClickScrollInfo = () => {
-    //     window.scrollTo({
-    //          top: 200,
-    //          behavior: 'smooth',
-    //     });
-    //   }
-    //     const onClickScrollPur = () => {
-    //       window.scrollTo({
-    //            top: 500,
-    //            behavior: 'smooth',
-    //       });
-    //     }
+    const router = useRouter();
+
+    const onClickMember = () => {
+      router.push('http://localhost:3000/info/admin')
+    }
     
-    //   const onClickScrollMark = () => {
-    //     window.scrollTo({
-    //          top: 1000,
-    //          behavior: 'smooth',
-    //     });
-    //   }
-    
-    //   const onClickScrollService = () => {
-    //     window.scrollTo({
-    //         top: 1300,
-    //         behavior: 'smooth',
-    //     });
-    //   }
-
-
+    const onClickArtist = () => {
+      router.push('http://localhost:3000/info/admin/artist')
+    }
+  
+    const onClickHelp = () => {
+      router.push('http://localhost:3000/info/admin/help')
+    }
+    const onClickWork = () => {
+      router.push('http://localhost:3000/info/admin/work')
+    }
+    const onClickExhibition = () => {
+      router.push('http://localhost:3000/info/admin/exhibition')
+    }
+    const onClickCommission = () => {
+      router.push('http://localhost:3000/info/admin/commission')
+    }
+  
     return (
-        <> 
-        <LayoutSideNavAdmin/>
-        </>
+        <LayoutSideNavAdminUI
+        onClickArtist={onClickArtist}
+        onClickCommission={onClickCommission}
+        onClickExhibition={onClickExhibition}
+        onClickHelp={onClickHelp}
+        onClickMember={onClickMember}
+        onClickWork={onClickWork}
+        />
     )
 }

@@ -2,8 +2,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faHeadset } from '@fortawesome/free-solid-svg-icons'
 import * as C from './service-center.styles' 
 
-
-export default function LayoutServiceCenter(props) {
+export default function LayoutServiceCenterUI(props) {
  
   return (
     <>  

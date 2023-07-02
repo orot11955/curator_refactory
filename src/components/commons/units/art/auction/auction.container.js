@@ -1,10 +1,10 @@
-import AuctionView from "./auction.presenter"
+import ArtAuctionUI from "./auction.presenter"
 
-export default function AuctionContainer() {
+export default function ArtAuction() {
 
     return (
         <>
-          <AuctionView/>
+          <ArtAuctionUI/>
         </>
     )
 }

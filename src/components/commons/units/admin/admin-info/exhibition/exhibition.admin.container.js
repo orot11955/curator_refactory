@@ -1,9 +1,9 @@
-import AdminExhibitionView from "./exhibition.admin.presenter"
+import AdminExhibitionInfoUI from "./exhibition.admin.presenter"
 
-export default function AdminExhibitionContainer() {
+export default function AdminExhibitionInfo() {
     return (
         <>
-        <AdminExhibitionView/>
+        <AdminExhibitionInfoUI/>
         </>
     )
 }

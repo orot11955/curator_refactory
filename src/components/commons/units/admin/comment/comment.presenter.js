@@ -4,7 +4,7 @@ import axios from 'axios';
 import * as C from './comment.styles'
 import { useRouter } from 'next/router';
 
-export default function CommentView(){
+export default function AdminCommentUI(){
 
     const back = process.env.NEXT_PUBLIC_URI
     const router = useRouter();

@@ -1,6 +1,6 @@
-import AdminWorkView from "./work.admin.presenter"
+import AdminWorkUI from "./work.admin.presenter"
 
-export default function AdminWorkContainer() {
+export default function AdminWorkInfo() {
     return (
         <>
          <AdminWorkView/>

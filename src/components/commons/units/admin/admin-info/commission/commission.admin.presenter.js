@@ -1,10 +1,10 @@
 import * as C from './commission.admin.styles'
-import LayoutSideNavAdmin from '../../../../layout/side-nav-admin/side-nav-admin.presenter'
+import LayoutSideNavAdmin from '../../../../layout/side-nav-admin/side-nav-admin.container'
 import { useState, useEffect } from "react"
 import axios from 'axios';
 import { useRouter } from 'next/router';
 
-export default function AdminCommissionView(props) {
+export default function AdminCommissionInfoUI(props) {
 
     const router = useRouter();
     const [commList, setCommList] = useState();

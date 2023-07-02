@@ -4,7 +4,7 @@ import React, {useCallback, useState} from 'react';
 import axios from 'axios';
 
 
-export default function AdminExhibitionView(props) {
+export default function AdminExhibitionInfoUI(props) {
 
     const back = process.env.NEXT_PUBLIC_URI
     const [file, setFile] = useState(null);
