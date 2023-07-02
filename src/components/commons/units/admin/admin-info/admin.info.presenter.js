@@ -7,40 +7,6 @@ import { useRouter } from 'next/router';
 
 export default function AdminInfoView(props) {
 
-    const router = useRouter();
-    const [memberList, setMemberList] = useState();
-    const back = process.env.NEXT_PUBLIC_URI
-    const [deleteMember, setDeleteMember] = useState();
-
-    // 회원 불러오기 
-    useEffect(() => {
-        axios.get(`${back}adminCustomerList`)
-        .then((res) => {
-            setMemberList(res.data);
-        })
-    },[])
-
-    // 회원 삭제하기 
-    const onClickDelete = () => {    
-        axios.post(`${back}adminMemberDelete`,{"memberSeq":deleteMember})
-        .then((res)=>{
-            if(res.data === 1){
-                alert('회원이 삭제되었습니다.');
-                router.push('/admin/admin-info')
-            }else{
-                alert('회원이 삭제를 실패하였습니다.');
-            }
-        })
-    }
-    
-    const onChangeCheck = (e) => {
-        const curr = e.target.value;
-        setDeleteMember(curr);
-    }
-
-
-
-
     return (
         <>
         <C.Wrapper>
@@ -54,15 +20,15 @@ export default function AdminInfoView(props) {
                 </C.Tr>
                 </thead>
                 <tbody>
-                {memberList?.map((el,i) => (
+                {props.memberList?.map((el,i) => (
                 <C.Tr key={i}>
-                    <C.CheckBox onChange={onChangeCheck} value={el.memberSeq} type="radio" name='delete'></C.CheckBox><C.Td>{el.memberSeq}</C.Td><C.Td>{el.memberEmail}</C.Td><C.Td>{el.memberNickname}</C.Td><C.Td>{el.memberName}</C.Td><C.Td>{el.memberPhone}</C.Td><C.Td>{el.memberGrade}</C.Td><C.Td>{new Date(el.memberDate).toLocaleString()}</C.Td>
+                    <C.CheckBox onChange={props.onChangeCheck} value={el.memberSeq} type="radio" name='delete'></C.CheckBox><C.Td>{el.memberSeq}</C.Td><C.Td>{el.memberEmail}</C.Td><C.Td>{el.memberNickname}</C.Td><C.Td>{el.memberName}</C.Td><C.Td>{el.memberPhone}</C.Td><C.Td>{el.memberGrade}</C.Td><C.Td>{new Date(el.memberDate).toLocaleString()}</C.Td>
                 </C.Tr>                
                 ))}    
                 </tbody>
             </C.MemberTable>
             <C.MemberBtn>
-             <C.Btn onClick={onClickDelete}>삭제하기</C.Btn>    
+             <C.Btn onClick={props.onClickDelete}>삭제하기</C.Btn>    
             </C.MemberBtn>
             </C.MemberWrapper>
         </C.Wrapper>

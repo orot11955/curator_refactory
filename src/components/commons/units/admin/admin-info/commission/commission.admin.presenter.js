@@ -6,36 +6,6 @@ import { useRouter } from 'next/router';
 
 export default function AdminCommissionView(props) {
 
-    const router = useRouter();
-    const [commList, setCommList] = useState();
-    const [deleteComm, setDeleteComm] = useState();
-    const back = process.env.NEXT_PUBLIC_URI
-    
-    useEffect(() => {
-        axios.get(`${back}commAllList`)
-        .then((res) => {
-            setCommList(res.data);
-        })
-    },[])
-
-    //작품 의뢰 내역 삭제하기
-    const onChangeCheck = (e) => {
-        const curr = e.target.value
-        setDeleteComm(curr);
-    }
-
-    const onClickDelete = () => {
-        axios.post(`${back}commissionDelete`,{"commSeq":deleteComm})
-        .then((res) => {
-            if(res.data === 1){
-                alert('작품 의뢰게시물이 삭제되었습니다.')
-                router.push('/admin/admin-info/commission')
-            }else{
-                alert('작품 의뢰게시물 삭제를 실패하였습니다.')
-            }
-        })
-    }
-    
     return (
         <>
         <C.Wrapper>
@@ -49,15 +19,15 @@ export default function AdminCommissionView(props) {
                 </C.Tr>
                 </thead>
                 <tbody>
-                {commList?.map((el,i) => (
+                {props.commList?.map((el,i) => (
                 <C.Tr key={i}>
-                    <C.Check onChange={onChangeCheck} type='radio' name='comm' value={el.commSeq}></C.Check><C.Td>{el.commSeq}</C.Td><C.Td>{el.commTitle}</C.Td><C.Td>{el.commContent}</C.Td><C.Td>{new Date(el.commDate).toLocaleString()}</C.Td>
+                    <C.Check onChange={props.onChangeCheck} type='radio' name='comm' value={el.commSeq}></C.Check><C.Td>{el.commSeq}</C.Td><C.Td>{el.commTitle}</C.Td><C.Td>{el.commContent}</C.Td><C.Td>{new Date(el.commDate).toLocaleString()}</C.Td>
                 </C.Tr>
                 ))}
                 </tbody>
             </C.CommTable>
             <C.CommBtn>
-             <C.Btn onClick={onClickDelete}>삭제하기</C.Btn>    
+             <C.Btn onClick={props.onClickDelete}>삭제하기</C.Btn>    
             </C.CommBtn>
             </C.CommWrapper>
         </C.Wrapper>

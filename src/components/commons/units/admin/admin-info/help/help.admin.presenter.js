@@ -9,36 +9,6 @@ import { useRouter } from 'next/router'
 
 export default function AdminHelpView(props) {
 
-    const router = useRouter();
-    const [helpList, setHelpList] = useState();
-    const [deleteHelp, setDeleteHelp] = useState();
-    const back = process.env.NEXT_PUBLIC_URI
-
-    useEffect(() => {
-        axios.get(`${back}helpAllList`)
-        .then((res) => {
-            setHelpList(res.data);
-        })
-    },[])
-
-    //삭제하기
-    const onClickDelete = () => {    
-        axios.post(`${back}helpDelete`,{"helpSeq":deleteHelp})
-        .then((res)=>{
-            if(res.data === 1){
-                alert('문의 게시글이 삭제되었습니다.');
-                router.push('/admin/admin-info/help')
-            }else{
-                alert('문의 게시글이 삭제를 실패하였습니다.');
-            }
-        })
-    }
-    
-    const onChangeCheck = (e) => {
-        const curr = e.target.value;
-        setDeleteHelp(curr);
-    }
-
     return (
         <>
         <C.Wrapper>
@@ -52,15 +22,15 @@ export default function AdminHelpView(props) {
                 </C.Tr>
                 </thead>
                 <tbody>
-                {helpList?.map((el,i) => (
+                {props.helpList?.map((el,i) => (
                 <C.Tr key={i}>
-                    <C.Check type="radio" name='help' onChange={onChangeCheck} value={el.helpSeq}/><C.Td>{el.helpTitle}</C.Td><C.Td>{el.helpContent}</C.Td><C.Td>{new Date(el.helpDate).toLocaleString()}</C.Td><C.Td><Link href={`/menu/service.center/${el.helpSeq}`}><FontAwesomeIcon icon={faCommentDots} size='xl'/></Link></C.Td>
+                    <C.Check type="radio" name='help' onChange={props.onChangeCheck} value={el.helpSeq}/><C.Td>{el.helpTitle}</C.Td><C.Td>{el.helpContent}</C.Td><C.Td>{new Date(el.helpDate).toLocaleString()}</C.Td><C.Td><Link href={`/menu/service.center/${el.helpSeq}`}><FontAwesomeIcon icon={faCommentDots} size='xl'/></Link></C.Td>
                 </C.Tr>
                 ))}    
                 </tbody>
             </C.HelpTable>
             <C.HelpBtn>
-             <C.Btn onClick={onClickDelete}>삭제하기</C.Btn>    
+             <C.Btn onClick={props.onClickDelete}>삭제하기</C.Btn>    
             </C.HelpBtn>
             </C.HelpWrapper>
         </C.Wrapper>

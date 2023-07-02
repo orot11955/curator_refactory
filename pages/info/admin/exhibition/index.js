@@ -1,10 +1,10 @@
-import AdminExhibitionView from '../../../../src/components/commons/units/admin/admin-info/exhibition/exhibition.admin.presenter'
+import AdminExhibitionContainer from '../../../../src/components/commons/units/admin/admin-info/exhibition/exhibition.admin.container'
 
 export default function AdminExhibition(){
 
     return (
         <>
-         <AdminExhibitionView/>   
+         <AdminExhibitionContainer/>   
         </>
     )
 }
