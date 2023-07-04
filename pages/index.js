@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import * as C from '../styles/emotion'
-import LayoutBodyHeader from "../src/components/commons/layout/body/body.artist.presenter";
+import LayoutBodyArtist from "../src/components/commons/layout/body/body.artist.container";
 import LayoutBodySlide from "../src/components/commons/layout/body/body.slide.container";
 import LayoutBodyArts from "../src/components/commons/layout/body/body.arts.container";
 
@@ -11,7 +11,7 @@ export default function Main() {
   return (
   <>
     <C.Wrapper>
-      <LayoutBodyHeader/>
+      <LayoutBodyArtist/>
       <LayoutBodySlide/>
       <LayoutBodyArts/>
     </C.Wrapper>

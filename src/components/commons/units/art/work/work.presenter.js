@@ -8,101 +8,42 @@ import ModalBasic from '../../modal'
 
 export default function WorkView(props) {
 
-  const back = process.env.NEXT_PUBLIC_URI
-  const router = useRouter();
-  const [content, setContent] = useState('');
-  const [artist, setArtist] = useState('');
-  const [postSeq, setPostSeq] = useState(router.query.art);
-  const [kakao, setKakao] = useState('');
-  console.log(router.query.art)
-
-  useEffect( async () => {
-    const back = process.env.NEXT_PUBLIC_URI
-    await axios.get(`${back}postView?postSeq=${postSeq}`)
-    .then((res) => {
-      setContent(res.data);
-      axios.get(`${back}artistInform?artistSeq=${res.data.artistSeq}`)
-      .then((res) => {
-        setArtist(res.data); 
-      })
-    })
-    
-  }, [])
-
-  const onClickCart = () => {
-    const map = {
-      memberSeq: sessionStorage.getItem('userSeq'),
-      postSeq: postSeq
-    }
-    axios.post(`${back}postCart`, map)
-      .then((res) => {
-        if(res.data = 1) {
-          alert('장바구니에 추가되었습니다.')
-        } else alert('장바구니 추가에 실패하였습니다.')
-
-      })
-  }
-
-  const onClickBuy = () => {
-      const memberSeq = sessionStorage.getItem('userSeq')
-      const artistSeq = content.artistSeq
-      const postTitle = content.postTitle
-      const postPrice = content.postEndPrice
-      const postSeq = content.postSeq
-   
-    
-    axios.get(`${back}readyKakaoRequest?memberSeq=${memberSeq}&artistSeq=${artistSeq}&postTitle=${postTitle}&postPrice=${postPrice}&postSeq=${postSeq}`, {headers: {'Access-Control-Allow-Origin':'*'}})
-    .then((res) => {
-      console.log(res.data)
-      setKakao(res.data)
-      showModal()
-    })
-  }
-
-  // 모달창 노출 여부 state
-  const [modalOpen, setModalOpen] = useState(false);
-
-  // 모달창 노출
-  const showModal = () => {
-      setModalOpen(true);
-  };
-
   return (
     <>  
       <C.Wrapper>
         <C.WorkWrapper>
           <C.WorkSection>
-            <C.WorkImage src={content?.postImageName}/>
+            <C.WorkImage src={props.content?.postImageName}/>
           </C.WorkSection>
           <C.WorkSection>  
             <C.WorkInfo>
               <C.WorkNo>No.1234</C.WorkNo>
               <C.WorkColumn>
-              <C.WorkTitle>{content?.postTitle}</C.WorkTitle>  
-              <C.WorkSummary>{content?.postSummary}</C.WorkSummary>
+              <C.WorkTitle>{props.content?.postTitle}</C.WorkTitle>  
+              <C.WorkSummary>{props.content?.postSummary}</C.WorkSummary>
               <C.Div>
               <C.WorkMemo>
                 <C.WorkSize>크기 : 90.8 X 112.8cm</C.WorkSize>
                 <C.WorkType>종류 : Acrylic</C.WorkType>
               </C.WorkMemo>
               <C.WorkMemo>
-                <C.WorkType>작가 : {artist?.artistName}</C.WorkType>
+                <C.WorkType>작가 : {props.artist?.artistName}</C.WorkType>
               </C.WorkMemo>       
               </C.Div>              
             </C.WorkColumn>
 
             <C.WorkPrice>
-              <C.Price>금액 {content?.postPrice} 원</C.Price>
+              <C.Price>금액 {props.content?.postPrice} 원</C.Price>
               <C.WorkDate>등록일자 2023.06.05</C.WorkDate>
             </C.WorkPrice>    
               <C.WorkBtn>
-                <C.Btn type='button' onClick={onClickCart}>장바구니 <FontAwesomeIcon icon={faCartShopping} /></C.Btn>
-                <C.Btn type='button' onClick={onClickBuy}>구매하기</C.Btn>
+                <C.Btn type='button' onClick={props.onClickCart}>장바구니 <FontAwesomeIcon icon={faCartShopping} /></C.Btn>
+                <C.Btn type='button' onClick={props.onClickBuy}>구매하기</C.Btn>
              </C.WorkBtn>
             </C.WorkInfo> 
           </C.WorkSection>
         </C.WorkWrapper>
-        {modalOpen && <ModalBasic setModalOpen={setModalOpen} kakao={kakao} />}
+        {props.modalOpen && <ModalBasic setModalOpen={props.setModalOpen} kakao={props.kakao} />}
 
         <C.Line/>
         {/* 품질 인증  */}
@@ -116,8 +57,8 @@ export default function WorkView(props) {
          <C.WorkArticle>
           <C.WorkArticleTitle> 이 작품에 대하여.. </C.WorkArticleTitle>
           <C.Quality>
-            <b>작품명 : </b>{content?.postTitle} <br/>
-            <b>작가명 : </b> {artist?.artistName} <br/>
+            <b>작품명 : </b>{props.content?.postTitle} <br/>
+            <b>작가명 : </b> {props.artist?.artistName} <br/>
             <b>제작연도 :</b> 2023 <br/>
             <b>크기 :</b> 90.8 X 112.8cm <br/>
             <b>종류 :</b> Acrylic <br/>

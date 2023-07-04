@@ -1,5 +1,5 @@
 import * as C from './exhibition.admin.styles'
-import LayoutSideNavAdmin from '../../../../layout/side-nav-admin/side-nav-admin.presenter'
+import LayoutSideNavAdmin from '../../../../layout/side-nav-admin/side-nav-admin.container'
 import React, {useCallback, useState} from 'react';
 import axios from 'axios';
 

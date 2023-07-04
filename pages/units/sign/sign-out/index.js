@@ -17,7 +17,6 @@ export default function Signout () {
     removeCookie('refreshToken', {path: "/"})
     // removeCookie('refreshToken', {domain: 'http://localhost', path: '/', secure: true, httpOnly: true, sameSite: 'None'})
     
-    
     router.push('/');
 
     return(<></>)

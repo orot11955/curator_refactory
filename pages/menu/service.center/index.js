@@ -1,10 +1,10 @@
-import ServiceView from "../../../src/components/commons/units/menu/service.center/service.presenter"
+import ServiceContainer from "../../../src/components/commons/units/menu/service.center/service.container"
 
 export default function Service() {
 
     return (
         <>
-         <ServiceView/>
+         <ServiceContainer/>
         </>
     )
 }

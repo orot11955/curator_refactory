@@ -8,110 +8,26 @@ import { useState, useEffect } from 'react'
 import { useRouter } from 'next/router'
 
 export default function ArtAuctionUI(props) {
-
-  const back = process.env.NEXT_PUBLIC_URI
-  const router = useRouter();
-
-  const [userSeq, setUserSeq] = useState();
-  const [userNickName, setUserNickName] = useState();
-
-  const [content, setContent] = useState();
-  const [artist, setArtist] = useState();
-  const [postSeq, setPostSeq] = useState(router.query.work);
-  const [auction, setAuction] = useState();
-  const [price, setPrice] = useState('');
-  const [bid, setBid] = useState();
-  console.log(router.query.work)
-
-  useEffect( async() => {
-    try {
-      const back = process.env.NEXT_PUBLIC_URI
-      await axios.get(`${back}postView?postSeq=${postSeq}`)
-      .then((res) => {
-        setContent(res.data);
-        setBid(res.data.postPrice)
-        axios.get(`${back}artistInform?artistSeq=${res.data.artistSeq}`)
-        .then((res) => {
-          setArtist(res?.data); 
-        })
-      })
-    
-  
-      const bidAuction = await axios.get(`${back}auctionView?postSeq=${postSeq}`)
-      const bidAuctionData = await Promise.resolve(bidAuction);
-        setAuction(bidAuctionData);
-        console.log(auction)
-        if(bidAuctionData?.data[0]){
-          setBid(bidAuctionData.data[0].aucPrice)
-        }
-        console.log(auction)
-      
-  
-      setUserSeq(sessionStorage.getItem('userSeq'))
-      setUserNickName(sessionStorage.getItem('userNickname'))
-
-    } catch (error) {
-      console.error('Error fetching cart data:', error);
-    }
-    
-  }, [])
-
-  const onChangePrice = (e) => {
-    const currPrice = e.target.value;
-    setPrice(currPrice);
-  }
-
-  const onClickBid = async() => {
-    if(price > bid){
-      const form = {
-        memberSeq: userSeq,
-        artistSeq: content?.artistSeq,
-        postSeq: content?.postSeq,
-        aucNickname: userNickName,
-        aucPrice: price,
-      }
-      const bid = axios.post(`${back}auctionBid`, form)
-      const bidData = await Promise.resolve(bid);
-
-      if(bidData.data === 1) {
-        alert('입찰에 성공하였습니다.')
-        document.getElementById('bid').value = '';
-        bidLoad();
-      } else alert('잘못된 금액입니다.')
-
-    } else alert('잘못된 금액입니다.')
-  }
-
-  const bidLoad = async() => {
-    const bidAuction = axios.get(`${back}auctionView?postSeq=${postSeq}`)
-    const bidAuctionData = await Promise.resolve(bidAuction);
-      setAuction(bidAuctionData);
-      console.log(auction)
-      if(bidAuctionData?.data[0]){
-        setBid(bidAuctionData.data[0].aucPrice)
-      }
-  }
-
   
   return (
     <>  
       <C.Wrapper>
         <C.WorkWrapper>
           <C.WorkSection>
-            <C.WorkImage src={content?.postImageName}/>
+            <C.WorkImage src={props.content?.postImageName}/>
           </C.WorkSection>
           <C.WorkSection>  
             <C.WorkInfo>
               <C.WorkNo>No.1234</C.WorkNo>
               <C.WorkColumn>
-              <C.WorkTitle>{content?.postTitle}</C.WorkTitle>
-              <C.WorkSummary>{content?.postSummary}</C.WorkSummary>
+              <C.WorkTitle>{props.content?.postTitle}</C.WorkTitle>
+              <C.WorkSummary>{props.content?.postSummary}</C.WorkSummary>
               <C.WorkMemo>
                 <C.WorkSize>크기 : 90.8 X 112.8cm</C.WorkSize>
                 <C.WorkType>종류 : Acrylic</C.WorkType>
               </C.WorkMemo>
               <C.WorkPrice>
-                <C.Price>경매시작 금액 : {content?.postPrice} 원 </C.Price>
+                <C.Price>경매시작 금액 : {props.content?.postPrice} 원 </C.Price>
               </C.WorkPrice>
             </C.WorkColumn>
             <C.WorkColumn>
@@ -123,13 +39,13 @@ export default function ArtAuctionUI(props) {
                 </thead>
                 <tbody>
                   <C.Tr>
-                    <C.Number1><FontAwesomeIcon icon={faMedal} />1</C.Number1><C.Td>{auction?.data[0]?.aucNickName}</C.Td><C.Td>{auction?.data[0]?.aucPrice}</C.Td>
+                    <C.Number1><FontAwesomeIcon icon={faMedal} />1</C.Number1><C.Td>{props.auction?.data[0]?.aucNickName}</C.Td><C.Td>{props.auction?.data[0]?.aucPrice}</C.Td>
                   </C.Tr>
                   <C.Tr>
-                    <C.Number2><FontAwesomeIcon icon={faMedal} />2</C.Number2><C.Td style={{color: 'black', fontWeight: 'normal'}}>{auction?.data[1]?.aucNickName}</C.Td><C.Td style={{color: 'black', fontWeight: 'normal'}}>{auction?.data[1]?.aucPrice}</C.Td>
+                    <C.Number2><FontAwesomeIcon icon={faMedal} />2</C.Number2><C.Td style={{color: 'black', fontWeight: 'normal'}}>{props.auction?.data[1]?.aucNickName}</C.Td><C.Td style={{color: 'black', fontWeight: 'normal'}}>{props.auction?.data[1]?.aucPrice}</C.Td>
                   </C.Tr>
                   <C.Tr>
-                    <C.Number3><FontAwesomeIcon icon={faMedal} />3</C.Number3><C.Td style={{color: 'black', fontWeight: 'normal'}}>{auction?.data[2]?.aucNickName}</C.Td><C.Td style={{color: 'black', fontWeight: 'normal'}}>{auction?.data[2]?.aucPrice}</C.Td>
+                    <C.Number3><FontAwesomeIcon icon={faMedal} />3</C.Number3><C.Td style={{color: 'black', fontWeight: 'normal'}}>{props.auction?.data[2]?.aucNickName}</C.Td><C.Td style={{color: 'black', fontWeight: 'normal'}}>{props.auction?.data[2]?.aucPrice}</C.Td>
                   </C.Tr>
                 </tbody>
               </C.Table>
@@ -139,8 +55,8 @@ export default function ArtAuctionUI(props) {
                 <C.WorkDate>등록일자 2023.06.05</C.WorkDate>
               </C.FavoriteBtn>
               <C.WorkBtn>
-                <C.PriceBtn id='bid' onChange={onChangePrice} placeholder='입찰가를 입력하세요.'/>
-                <C.Btn type='button' onClick={onClickBid}>입찰하기</C.Btn>
+                <C.PriceBtn id='bid' onChange={props.onChangePrice} placeholder='입찰가를 입력하세요.'/>
+                <C.Btn type='button' onClick={props.onClickBid}>입찰하기</C.Btn>
              </C.WorkBtn>
             </C.WorkInfo>  
           </C.WorkSection>
@@ -158,8 +74,8 @@ export default function ArtAuctionUI(props) {
           <C.WorkArticleTitle> 이 작품에 대하여.. </C.WorkArticleTitle>
          <C.WorkArticle>
           <C.Quality>
-            <b>작품명 : </b>{content?.postTitle} <br/>
-            <b>작가명 :</b> {artist?.artistName} <br/>
+            <b>작품명 : </b>{props.content?.postTitle} <br/>
+            <b>작가명 :</b> {props.artist?.artistName} <br/>
             <b>제작연도 :</b> 2023 <br/>
             <b>크기 :</b> 90.8 X 112.8cm <br/>
             <b>종류 :</b> Acrylic <br/>

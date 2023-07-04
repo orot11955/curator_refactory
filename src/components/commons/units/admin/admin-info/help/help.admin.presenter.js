@@ -1,5 +1,5 @@
 import * as C from './help.admin.styles'
-import LayoutSideNavAdmin from '../../../../layout/side-nav-admin/side-nav-admin.presenter'
+import LayoutSideNavAdmin from '../../../../layout/side-nav-admin/side-nav-admin.container'
 import axios from 'axios'
 import { useEffect, useState } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
