@@ -1,10 +1,10 @@
-import ExhibitionView from './exhibition.presenter'
+import ExhibitionMenuUI from './exhibition.presenter'
 
-export default function ExhibitionContainer() {
+export default function ExhibitionMenu() {
 
  return (
         <>
-          <ExhibitionView/>        
+          <ExhibitionMenuUI/>        
         </>
     )
 

@@ -4,7 +4,7 @@ import React, {useCallback, useState} from 'react';
 import axios from 'axios';
 
 
-export default function AdminExhibitionInfoUI(props) {
+export default function AdminInfoExhibitionUI(props) {
 
     return (
         <>

@@ -9,7 +9,7 @@ import jwt from 'jsonwebtoken'; // jwt
 import Router, { useRouter } from 'next/router'
 
 // 로그인 페이지 
-export default function SignInView(props) {
+export default function SignInUI(props) {
 
   const back = process.env.NEXT_PUBLIC_URI
   const [iconEmail, setIconEmail] = useState(false);

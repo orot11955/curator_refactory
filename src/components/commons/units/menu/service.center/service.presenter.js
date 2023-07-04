@@ -9,7 +9,7 @@ import { useRouter } from 'next/router';
 
 import ServiceContainer from './service.container'
 
-export default function ServiceView(props) {
+export default function ServiceMenuUI(props) {
 
   const router = useRouter();
   const [serviceList, setServiceList] = useState();

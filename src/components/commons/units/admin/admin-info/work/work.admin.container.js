@@ -1,4 +1,4 @@
-import AdminWorkView from "./work.admin.presenter"
+import AdminInfoWorkUI from "./work.admin.presenter"
 import * as C from './work.admin.styles'
 import LayoutSideNavAdmin from '../../../../layout/side-nav-admin/side-nav-admin.presenter'
 import { useEffect } from 'react'
@@ -8,7 +8,7 @@ import Image from 'next/image';
 import { route } from 'next/dist/server/router';
 import { useRouter } from 'next/router';
 
-export default function AdminWorkContainer() {
+export default function AdminInfoWork() {
 
     const router = useRouter();
     const back = process.env.NEXT_PUBLIC_URI
@@ -126,7 +126,7 @@ export default function AdminWorkContainer() {
 
     return (
         <>
-         <AdminWorkView
+         <AdminInfoWorkUI
             router={router}
             back={back}
             file={file}

@@ -1,4 +1,4 @@
-import AdminHelpView from "./help.admin.presenter"
+import AdminInfoHelpUI from "./help.admin.presenter"
 import * as C from './help.admin.styles'
 import LayoutSideNavAdmin from '../../../../layout/side-nav-admin/side-nav-admin.presenter'
 import axios from 'axios'
@@ -8,7 +8,7 @@ import {faCommentDots} from '@fortawesome/free-solid-svg-icons'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 
-export default function AdminHelpContainer() {
+export default function AdminInfoHelp() {
 
     const router = useRouter();
     const [helpList, setHelpList] = useState();
@@ -43,7 +43,7 @@ export default function AdminHelpContainer() {
 
     return (
         <>
-        <AdminHelpView
+        <AdminInfoHelpUI
             router={router}
             helpList={helpList}
             deleteHelp={deleteHelp}

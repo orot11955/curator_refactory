@@ -12,7 +12,7 @@ import Post from '../../../../../../pages/sign/sign-up/address/index';
 import Router, { useRouter } from 'next/router'
 import path from 'path'
 
-export default function SignUpView(props) {
+export default function SignUpUI(props) {
   const back = process.env.NEXT_PUBLIC_URI
   const [icon, setIcon] = useState(false); 
   const [iconF, setIconF] = useState(false); 

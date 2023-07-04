@@ -7,7 +7,7 @@ import React, {useCallback, useState, useEffect} from 'react';
 import axios from 'axios';
 import { useRouter } from 'next/router';
 
-export default function ServiceBoardNewView(props) {
+export default function ServiceBoardNewUI(props) {
 
   const [cat, setCat] = useState("");
   const [title, setTitle] = useState("");

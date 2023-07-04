@@ -7,7 +7,7 @@ import { useEffect, useState } from 'react'
 import axios from 'axios'
 import CommentView from '../../../admin/comment/comment.presenter'
 
-export default function ServiceBoardView(props) {
+export default function ServiceBoardViewUI(props) {
 
   const router = useRouter();
   const [helpView, setHelpView] = useState();

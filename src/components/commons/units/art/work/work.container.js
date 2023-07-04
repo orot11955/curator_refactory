@@ -1,10 +1,10 @@
-import WorkView from "./work.presenter"
+import ArtWorkUI from "./work.presenter"
 
-export default function WorkContainer() {
+export default function ArtWork() {
 
     return (
         <>
-          <WorkView/>
+          <ArtWorkUI/>
         </>
     )
 }

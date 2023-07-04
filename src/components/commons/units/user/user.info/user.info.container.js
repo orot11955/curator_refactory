@@ -1,9 +1,9 @@
-import UserInfoView from "./user.info.presenter"
+import UserInfoUI from "./user.info.presenter"
 
-export default function UserInfoContainer() {
+export default function UserInfo() {
     return (
         <>
-        <UserInfoView/>
+        <UserInfoUI/>
         </>
     )
 }

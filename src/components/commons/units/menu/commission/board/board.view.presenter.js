@@ -5,7 +5,7 @@ import { useRouter } from 'next/router'
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 
-export default function CommissionBoardView() {
+export default function CommissionBoardViewUI() {
 
   const router = useRouter();
   const [commissionView, setCommView] = useState();

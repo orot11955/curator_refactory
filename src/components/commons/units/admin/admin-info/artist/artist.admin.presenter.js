@@ -5,7 +5,7 @@ import axios from 'axios'
 import { useRouter } from 'next/router';
 import ModalBasic from './modal'
 
-export default function AdminArtistView(props) {
+export default function AdminInfoArtistUI(props) {
 
     return (
         <>

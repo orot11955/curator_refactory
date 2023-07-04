@@ -1,10 +1,10 @@
-import GenreView from "./genre.presenter"
+import GenreMenuUI from "./genre.presenter"
 
-export default function GenreContainer() {
+export default function GenreMenu() {
 
     return (
         <>
-        <GenreView/>
+        <GenreMenuUI/>
         </>
     )
 }

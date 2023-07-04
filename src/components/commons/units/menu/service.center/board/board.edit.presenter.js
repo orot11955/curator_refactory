@@ -6,7 +6,7 @@ import Router, { useRouter } from 'next/router'
 import { useEffect, useState } from 'react'
 import Link from 'next/link'
 
-export default function ServiceBoardEditView(props) {
+export default function ServiceBoardEditUI(props) {
 
   const router = useRouter();
   const [helpView, setHelpView] = useState();

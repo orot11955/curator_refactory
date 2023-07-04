@@ -1,11 +1,11 @@
 import React from 'react';
-import ServiceView from './service.presenter';
+import ServiceMenuUI from './service.presenter';
 
-export default function ServiceContainer() {
+export default function ServiceMenu() {
     
     return (
         <>
-         <ServiceView/>
+         <ServiceMenuUI/>
         </>
     )
     

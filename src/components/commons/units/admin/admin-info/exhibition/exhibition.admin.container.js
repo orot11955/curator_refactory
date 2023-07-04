@@ -1,10 +1,10 @@
-import AdminExhibitionView from "./exhibition.admin.presenter"
+import AdminInfoExhibitionUI from "./exhibition.admin.presenter"
 import * as C from './exhibition.admin.styles'
 import LayoutSideNavAdmin from '../../../../layout/side-nav-admin/side-nav-admin.presenter'
 import React, {useCallback, useState} from 'react';
 import axios from 'axios';
 
-export default function AdminExhibitionContainer() {
+export default function AdminInfoExhibition() {
 
     const back = process.env.NEXT_PUBLIC_URI
     const [file, setFile] = useState(null);
@@ -69,7 +69,7 @@ export default function AdminExhibitionContainer() {
 
     return (
         <>
-        <AdminExhibitionView
+        <AdminInfoExhibitionUI
             back={back}
             file={file}
             title={title}

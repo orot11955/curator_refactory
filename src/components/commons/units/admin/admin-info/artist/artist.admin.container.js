@@ -4,9 +4,9 @@ import { useState, useEffect } from 'react';
 import axios from 'axios'
 import { useRouter } from 'next/router';
 import ModalBasic from './modal'
-import AdminInfoView from "./artist.admin.presenter"
+import AdminInfoArtistUI from "./artist.admin.presenter"
 
-export default function AdminInfoContainer() {
+export default function AdminInfoArtist() {
 
     const router = useRouter();
     const [deleteArtist, setDeleteArtist] = useState();
@@ -53,7 +53,7 @@ export default function AdminInfoContainer() {
 
     return (
         <>
-        <AdminInfoView 
+        <AdminInfoArtistUI
             router={router}
             deleteArtist={deleteArtist}
             artistList={artistList}

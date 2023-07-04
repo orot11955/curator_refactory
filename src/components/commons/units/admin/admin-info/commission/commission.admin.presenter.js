@@ -4,7 +4,7 @@ import { useState, useEffect } from "react"
 import axios from 'axios';
 import { useRouter } from 'next/router';
 
-export default function AdminCommissionInfoUI(props) {
+export default function AdminInfoCommissionUI(props) {
 
     return (
         <>

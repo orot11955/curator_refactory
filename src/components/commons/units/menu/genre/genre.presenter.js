@@ -6,7 +6,7 @@ import { useCallback } from 'react';
 import { isAbsolute, relative } from 'path';
 import { useRouter } from 'next/router';
 
-export default function GenreView(props) {
+export default function GenreMenuUI(props) {
 
    const back = process.env.NEXT_PUBLIC_URI
 

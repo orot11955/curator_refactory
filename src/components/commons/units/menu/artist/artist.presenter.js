@@ -7,7 +7,7 @@ import { useEffect, useState, useLayoutEffect, useCallback } from 'react'
 import axios from 'axios'
 import LayoutPageNumber from '../../../layout/page-number/page-number.presenter'
 
-export default function ArtistView(props) {
+export default function ArtistMenuUI(props) {
  
   const [option , setOption] = useState(160); //초기값 false
   var imageArray = [];

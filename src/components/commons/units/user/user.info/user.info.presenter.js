@@ -12,7 +12,7 @@ import { useRouter } from "next/router"
 import ModalBasic from "../../modal"
 import ModalMove from "./modal/modal"
 
-export default function UserInfoView(props) {
+export default function UserInfoUI(props) {
 
     const router = useRouter();
     const [grade, setGrade] = useState();

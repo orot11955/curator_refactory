@@ -7,7 +7,7 @@ import axios from 'axios'
 import { useRouter } from 'next/router';
 
 
-export default function CommissionBoardNewView(props) {
+export default function CommissionBoardNewUI(props) {
 
   const [artistList, setArtistList] = useState([]);
   const [commContent, setCommContent] = useState("");

@@ -5,7 +5,7 @@ import Image from 'next/image';
 import React, {useCallback, useState, useEffect} from 'react';
 import Router, { useRouter } from 'next/router';
 
-export default function ExhibitionView(props) {
+export default function ExhibitionMenuUI(props) {
 
   const router = useRouter();
   const back = process.env.NEXT_PUBLIC_URI

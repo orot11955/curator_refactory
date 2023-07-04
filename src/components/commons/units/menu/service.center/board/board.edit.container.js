@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
-import ServiceBoardEditView from './board.edit.presenter';
+import ServiceBoardEditUI from './board.edit.presenter';
 
-export default function ServiceBoardEditContainer() {
+export default function ServiceBoardEdit() {
     
 
     return (
         <>
-         <ServiceBoardEditView/>
+         <ServiceBoardEditUI/>
         </>
     )
 }

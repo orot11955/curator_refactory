@@ -7,7 +7,7 @@ import {faCommentDots} from '@fortawesome/free-solid-svg-icons'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 
-export default function AdminHelpInfoUI(props) {
+export default function AdminInfoHelpUI(props) {
 
     return (
         <>

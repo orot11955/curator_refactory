@@ -10,8 +10,6 @@ export default function Layout(props){
             setShow(false);
         }
     })
-    
-    
     return (
         <>
          {show? <LayoutHeader/>:<></>}

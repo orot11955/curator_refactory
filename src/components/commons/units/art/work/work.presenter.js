@@ -6,7 +6,7 @@ import { useState, useEffect } from 'react'
 import { useRouter } from 'next/router'
 import ModalBasic from '../../modal'
 
-export default function WorkView(props) {
+export default function ArtWorkUI(props) {
 
   const back = process.env.NEXT_PUBLIC_URI
   const router = useRouter();

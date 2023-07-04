@@ -1,11 +1,11 @@
-import AdminCommissionView from "./commission.admin.presenter"
+import AdminInfoCommissionUI from "./commission.admin.presenter"
 import * as C from './commission.admin.styles'
 import LayoutSideNavAdmin from '../../../../layout/side-nav-admin/side-nav-admin.presenter'
 import { useState, useEffect } from "react"
 import axios from 'axios';
 import { useRouter } from 'next/router';
 
-export default function AdminCommissionContainer() {
+export default function AdminInfoCommission() {
 
 
     const router = useRouter();
@@ -41,7 +41,7 @@ export default function AdminCommissionContainer() {
 
     return (
         <>
-        <AdminCommissionView
+        <AdminInfoCommissionUI
             router={router}
             commList={commList}
             deleteComm={deleteComm}

@@ -5,7 +5,7 @@ import React, {useState, useEffect} from 'react';
 import * as C from './commission.styles' 
 import { useRouter } from 'next/router';
 
-export default function CommissionView(props){
+export default function CommissionMenuUI(props){
 
   const router = useRouter();
   const back = process.env.NEXT_PUBLIC_URI

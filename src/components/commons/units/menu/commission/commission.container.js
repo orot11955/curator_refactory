@@ -1,10 +1,10 @@
-import CommissionView from "./commission.presenter";
+import CommissionMenuUI from "./commission.presenter";
 
-export default function CommissionContainer() {
+export default function CommissionMenu() {
 
     return (
         <>
-        <CommissionView/>
+        <CommissionMenuUI/>
         </>
     )
 }

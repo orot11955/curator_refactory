@@ -7,7 +7,7 @@ import Image from 'next/image';
 import { route } from 'next/dist/server/router';
 import { useRouter } from 'next/router';
 
-export default function AdminWorkView(props) {
+export default function AdminInfoWorkUI(props) {
 
     return (
         <>

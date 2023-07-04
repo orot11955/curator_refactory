@@ -1,7 +1,7 @@
 import { useState } from "react" 
-import ArtWorkView from "../../art/work/work.presenter"
+import ArtistMenuUI from "../../art/work/work.presenter"
 
-export default function ArtWorkContainer() {
+export default function ArtistMenu() {
     const [isOpen, setIsOpen] = useState(false);
 
     const openModal = () => {
@@ -14,7 +14,7 @@ export default function ArtWorkContainer() {
 
     return (
         <>
-          <ArtWorkView
+          <ArtistMenuUI
           open={openModal}
           close={closeModal}/>
         </>

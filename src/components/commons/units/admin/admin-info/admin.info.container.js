@@ -1,11 +1,11 @@
-import AdminInfoView from "./admin.info.presenter"
+import AdminInfoUI from "./admin.info.presenter"
 import { useEffect, useState } from 'react';
 import * as C from './admin.info.styles'
 import LayoutSideNavAdmin from '../../../layout/side-nav-admin/side-nav-admin.presenter'
 import axios from 'axios'
 import { useRouter } from 'next/router';
 
-export default function AdminInfoContainer() {
+export default function AdminInfo() {
 
     const router = useRouter();
     const [memberList, setMemberList] = useState();
@@ -40,7 +40,7 @@ export default function AdminInfoContainer() {
 
     return (
         <>
-        <AdminInfoView
+        <AdminInfoUI
             router={router}
             memberList={memberList}
             back={back}

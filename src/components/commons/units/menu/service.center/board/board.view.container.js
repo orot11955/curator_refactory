@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
-import ServiceBoardView from './board.view.presenter'
+import ServiceBoardViewUI from './board.view.presenter'
 
-export default function ServiceBoardViewContainer() {
+export default function ServiceBoardView() {
     
     return (
         <>
-         <ServiceBoardView/>
+         <ServiceBoardViewUI/>
         </>
     )
 }
