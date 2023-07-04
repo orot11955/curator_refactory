@@ -1,9 +1,9 @@
-import ArtistView from "../../../src/components/commons/units/menu/artist/artist.presenter"
+import ArtWorkContainer from "../../../src/components/commons/units/menu/artist/artist.container"
 
 export default function Artist() {
     return (
         <>
-         <ArtistView/>
+         <ArtWorkContainer/>
         </>
     )
 }

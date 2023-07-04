@@ -1,10 +1,10 @@
-import GenreView from "../../../src/components/commons/units/menu/genre/genre.presenter"
+import GenreContainer from "../../../src/components/commons/units/menu/genre/genre.container"
 
 export default function Genre() {
 
     return (
         <>
-         <GenreView/>
+         <GenreContainer/>
         </>
     )
 }

@@ -8,50 +8,6 @@ import { useRouter } from 'next/router';
 
 export default function GenreMenuUI(props) {
 
-   const back = process.env.NEXT_PUBLIC_URI
-
-   const [genreList, setGenreList] = useState([]);
-   const [postList, setPostList] = useState([]);
-   const [mapping, setMapping] = useState([]);
-   const [file, setFile] = useState();
-   const router = useRouter();
-   var imageArray = [];
-   var array;
-   var dataArr; 
-
-   
-    // 장르명 get
-  useEffect(() => {
-   axios.get(`${back}genreList`)
-     .then((res) => {
-       setGenreList(res.data);
-     })
-
-   axios.get(`${back}postList`) 
-     .then((res) => {
-        setMapping(res.data)   
-     })
-   }, [])
-
-   const onClickPostAll = async () => {
-      setMapping([])
-      axios.get(`${back}postList`) 
-      .then((res) => {
-         setMapping(res.data)   
-      })
-   }
- 
-   const onClickPost = async (genreSeq) => {  
-      await axios.get(`${back}genreView?genreSeq=${genreSeq}`)
-      .then((res) => {
-         setMapping(res.data)
-      })
-   }
-
-   const onClickContent = async (postAuction, postSeq) => {
-      router.push(`/content/${postAuction}/${postSeq}`)
-   }
-
   return ( 
     <>   
         <C.Wrapper>
@@ -60,9 +16,9 @@ export default function GenreMenuUI(props) {
             <C.BannerSubTitle>Buy Original Paintings</C.BannerSubTitle>
          </C.GenreBanner>
             <C.GenreSelect>
-               <C.Genre onClick={onClickPostAll} >전체보기</C.Genre> 
-               {genreList?.map((el, i) => (
-               <C.Genre onClick={() => onClickPost(el.genreSeq)} >{el.genreName}</C.Genre>
+               <C.Genre onClick={props.onClickPostAll} >전체보기</C.Genre> 
+               {props.genreList?.map((el, i) => (
+               <C.Genre onClick={() => props.onClickPost(el.genreSeq)} >{el.genreName}</C.Genre>
                ))}
                <C.Select>
                   <option value={true}>추천순</option>
@@ -74,8 +30,8 @@ export default function GenreMenuUI(props) {
                </C.Select>
             </C.GenreSelect> 
          <C.GenreWrapper> 
-         {mapping?.map((el, i) => (
-            <C.GenreColumn key={el.postSeq} onClick={() => onClickContent(el.postAuction, el.postSeq)}>
+         {props.mapping?.map((el, i) => (
+            <C.GenreColumn key={el.postSeq} onClick={() => props.onClickContent(el.postAuction, el.postSeq)}>
                <div style={{position: 'relative', height: '389px'}}>
                   <C.ColumnImage src={el.postImageName} style={{position: 'absolute'}} fill={true} />
                      <C.ColumnInfo>

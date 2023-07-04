@@ -9,62 +9,6 @@ import { useRouter } from 'next/router';
 
 export default function CommissionBoardNewUI(props) {
 
-  const [artistList, setArtistList] = useState([]);
-  const [commContent, setCommContent] = useState("");
-  const [artistSeq, setArtistSeq] = useState("");
-  
-  const router = useRouter();
-  const back = process.env.NEXT_PUBLIC_URI
-
-
-  // 작가명 get
-  useEffect(() => {
-    axios.get(`${back}artistAllList`)
-      .then((res) => {
-        setArtistList(res.data);
-      })
-  }, [])
-
-  const onChangeContent = (event) => {
-    const currContent = event.target.value;
-    setCommContent(currContent);
-    console.log(commContent);
-  }
-
-  // onSelect
-  const onSelectArtist = (event) => {
-    const currArtist = event.target.value;
-    setArtistSeq(currArtist);
-    console.log(artistSeq)
-  }
-
-  // 취소
-  const onClickCancel = () => {
-    router.push('/menu/commission')
-  }
-
-  // 전송 
-  //게시물 등록시 메뉴로 안넘어가는 문제 
-  const onClickSubmit = () => {
-    const commData = {
-      memberSeq: sessionStorage.getItem('userSeq'), 
-      commTitle: '작품 의뢰 합니다.',
-      commContent: commContent,
-      artistSeq: artistSeq,
-    }
-    axios.post(`${back}commissionWrite`, commData)
-      .then((res) => {
-        console.log(res.data)
-        if(res.data == 1) {
-          alert('게시글 등록이 완료되었습니다.')
-          router.push('/menu/commission')
-        } else alert('게시물 등록에 실패하였습니다.')
-      })
-
-  }
-
-  
-
   return (
     <>  
       <C.Wrapper>
@@ -86,10 +30,10 @@ export default function CommissionBoardNewUI(props) {
           <C.Line/>
           <C.InputWrapper>
             <C.Label>작가 선택</C.Label>
-            <C.CommissionDiv onChange={onSelectArtist} >
+            <C.CommissionDiv onChange={props.onSelectArtist} >
               <option value={true}>전체</option> 
-              {artistList?.map((el, i) => (
-                <option key={i} value={artistList[i].artistSeq}>{artistList[i].artistName}</option>
+              {props.artistList?.map((el, i) => (
+                <option key={i} value={props.artistList[i].artistSeq}>{props.artistList[i].artistName}</option>
               ))}
             </C.CommissionDiv>
           </C.InputWrapper>
@@ -99,13 +43,13 @@ export default function CommissionBoardNewUI(props) {
           </C.InputWrapper>
           <C.ContentWrapper>
             <C.Label>작품 의뢰 내용</C.Label>
-            <C.CommissionContent onChange={onChangeContent}></C.CommissionContent>
+            <C.CommissionContent onChange={props.onChangeContent}></C.CommissionContent>
           </C.ContentWrapper>
 
 
           <C.BtnWrapper>
-            <C.CancelBtn onClick={onClickCancel}>취소</C.CancelBtn>
-            <C.SubmitBtn type='button' onClick={onClickSubmit}>작성하기</C.SubmitBtn>
+            <C.CancelBtn onClick={props.onClickCancel}>취소</C.CancelBtn>
+            <C.SubmitBtn type='button' onClick={props.onClickSubmit}>작성하기</C.SubmitBtn>
           </C.BtnWrapper>
         </C.BoardForm>
        </C.BoardFormWrapper>

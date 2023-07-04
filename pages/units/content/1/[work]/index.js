@@ -1,10 +1,10 @@
-import AuctionView from "../../../../../src/components/commons/units/art/auction/auction.presenter"
+import ArtAuction from "../../../../../src/components/commons/units/art/auction/auction.container"
 
 export default function Auction(){
 
     return (
         <>
-         <AuctionView/>
+         <ArtAuction/>
         </>
     )
 }

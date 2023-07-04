@@ -1,16 +1,15 @@
-import { useState } from "react"
+import { useRouter } from "next/router";
 import LayoutHeaderUI from "./header.presenter"
 import { useState, useEffect } from "react"
 import { useCookies } from 'react-cookie'
 
 export default function LayoutHeader() {
-
-    const [menu, setMenu] = useState(FontFaceSetLoadEvent)
     
     // login 판별
-    const [loginStatue, setLoginStatus] = useState();
+    const [loginStatus, setLoginStatus] = useState("");
     const [cookies, setCookie, removeCookie] = useCookies();
     const [userGrade, setUserGrade] = useState();
+    const router = useRouter();
     var info;
 
     useEffect(() => {
@@ -18,21 +17,16 @@ export default function LayoutHeader() {
         setUserGrade(sessionStorage.getItem('userGrade'));
     })
 
+
     if(userGrade == 1) {
         info = "/info/user";
     } else info = "/info/admin";
 
-
     return (
         <LayoutHeaderUI
-        menu={menu}
-        cookies={cookies}
-        artist={onClickMenuArtist}
-        type={onClickMenuType}
-        ask={onClickMenuCommission}
-        exhibition={onClickMenuExhibition}
-        service={onClickMenuService}
-        loginStatue={loginStatue}
+        loginStatus={loginStatus}
+        userGrade={userGrade}
+        info={info}
         />
     )
 }

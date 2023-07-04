@@ -6,29 +6,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faArrowLeft } from '@fortawesome/free-solid-svg-icons'
 import Link from 'next/link';
 
-export default function CommissionBoardEditUI(props) {
-  
-  const back = process.env.NEXT_PUBLIC_URI
-  const [artistList, setArtistList] = useState();
-  const [artist, setArtist] = useState();
-
-  useEffect(() => {
-    axios.get(`${back}artistAllList`)
-    .then((res) => {
-      console.log(res)
-      setArtistList(res.data);
-    })
-
-    // axios.get(`${back}updateView?commseq=${commSeq}`)
-    //   .then((res) => {
-
-    //   })
-  }, [])
-
-  const onChangeCate = (event) => {
-    const artistName = event.target.value;
-    setArtist(artistName);
-  }
+export default function CommissionBoardEdit(props) {
 
   return (
     <>  
@@ -51,8 +29,8 @@ export default function CommissionBoardEditUI(props) {
 
           <C.InputWrapper>
             <C.Label>작가 선택</C.Label>
-            <C.CommissionDiv onChange={onChangeCate} >
-              {artistList?.map((el, i) => (
+            <C.CommissionDiv onChange={props.onChangeCate} >
+              {props.artistList?.map((el, i) => (
                 <option value={el.artistName}>{el.artistName}</option>
               ))}
             </C.CommissionDiv>
@@ -68,8 +46,8 @@ export default function CommissionBoardEditUI(props) {
 
 
           <C.BtnWrapper>
-            <C.CancelBtn type='button' onClick={onClickCancel}>취소</C.CancelBtn>
-            <C.SubmitBtn type='button' onClick={onClickSubmit}>수정완료</C.SubmitBtn>
+            <C.CancelBtn type='button' onClick={props.onClickCancel}>취소</C.CancelBtn>
+            <C.SubmitBtn type='button' onClick={props.onClickSubmit}>수정완료</C.SubmitBtn>
           </C.BtnWrapper>
 
         </C.BoardForm>

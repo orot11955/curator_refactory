@@ -11,54 +11,6 @@ import ServiceContainer from './service.container'
 
 export default function ServiceMenuUI(props) {
 
-  const router = useRouter();
-  const [serviceList, setServiceList] = useState();
-  let serviceArray = []
-  let firData = []
-
-  const back = process.env.NEXT_PUBLIC_URI
-
-
-  // 작가명 get
-  const ServiceList = async () => {
-    const res = await axios.get(`${back}helpAllList`)
-        let list;
-        console.log(res.data)
-        firData = res.data;
-        for(let i = 0; i < res.data.length; i++) {
-           const response = await axios.get(`${back}getName?seq=${res.data[i].memberSeq}`)
-              list = { 
-                helpSeq: res.data[i].helpSeq,
-                helpTitle: res.data[i].helpTitle,
-                helpName: response.data,
-                helpContent: res.data[i].helpTitle,
-                helpCate: res.data[i].helpCate,
-                helpDate: getToday(res.data[i].helpDate),
-              }
-              serviceArray.push(list);
-            }
-            setServiceList(serviceArray);
-  }
-  useEffect(async () => {
-    ServiceList();
-  }, [])
-
-  function getToday(day){
-    var date = new Date(day);
-    var year = date.getFullYear();
-    var month = ("0" + (1 + date.getMonth())).slice(-2);
-    var day = ("0" + date.getDate()).slice(-2);
-
-    return year + "-" + month + "-" + day;
-}
-
-const onClickMove = (helpSeq) => {
-  router.push(`http://localhost:3000/menu/service.center/${helpSeq}`)
-}
-
-console.log(serviceList)
-console.log(serviceArray)
-
   return (
     <>  
       <C.Wrapper>
@@ -84,9 +36,9 @@ console.log(serviceArray)
         <C.ServiceTable>
           <C.Table>
             <tbody>
-            {serviceList?.map((el, i) => (
+            {props.serviceList?.map((el, i) => (
             <C.Tr>
-              <C.Div>{el.helpCate}</C.Div><C.Title onClick={() => onClickMove(el.helpSeq)}>{el.helpTitle}</C.Title><C.Icon><FontAwesomeIcon icon={faCaretDown} size="lg"/></C.Icon>
+              <C.Div>{el.helpCate}</C.Div><C.Title onClick={() => props.onClickMove(el.helpSeq)}>{el.helpTitle}</C.Title><C.Icon><FontAwesomeIcon icon={faCaretDown} size="lg"/></C.Icon>
             </C.Tr>
             ))}
             </tbody>

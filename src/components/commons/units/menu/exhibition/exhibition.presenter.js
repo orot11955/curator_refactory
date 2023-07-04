@@ -7,31 +7,6 @@ import Router, { useRouter } from 'next/router';
 
 export default function ExhibitionMenuUI(props) {
 
-  const router = useRouter();
-  const back = process.env.NEXT_PUBLIC_URI
-  const [mapping, setMapping] = useState();
-  const [list, setList] = useState();
-
- 
-  useEffect(() => {
-    axios.get(`${back}exhibitionView?exhibitionSeq=1`)
-      .then((res) => {
-        console.log(res.data)
-        setMapping(res.data)
-      })
-      
-      axios.get(`${back}postExhibition?postExhibition=1`)
-      .then((res) => {
-        console.log(res.data)
-        setList(res.data)
-      })
-
-  }, []) 
-
-  const onClickImage = (postAuction,postSeq) => {
-    router.push(`/content/${postAuction}/${postSeq}`);
-  }
-
   return (
     <>  
         <C.Wrapper>
@@ -42,10 +17,10 @@ export default function ExhibitionMenuUI(props) {
          <C.ExhibitionWrapper>
             <C.ExhibitionMenu>오늘의 전시회</C.ExhibitionMenu>
             <C.ExhibitionTitle>[ 코리아 IT 아카데미 ]
-                <C.ExhibitionSubTitle>{mapping?.exhibitionName} </C.ExhibitionSubTitle>
-                <C.ExhibitionDate>{mapping?.exhibitionDate}</C.ExhibitionDate>
-                <C.ExhibitionInfo>{mapping?.exhibitionExplain}</C.ExhibitionInfo>
-                <C.ExhibitionImage src={mapping?.exhibitionBanner} />
+                <C.ExhibitionSubTitle>{props.mapping?.exhibitionName} </C.ExhibitionSubTitle>
+                <C.ExhibitionDate>{props.mapping?.exhibitionDate}</C.ExhibitionDate>
+                <C.ExhibitionInfo>{props.mapping?.exhibitionExplain}</C.ExhibitionInfo>
+                <C.ExhibitionImage src={props.mapping?.exhibitionBanner} />
             </C.ExhibitionTitle>            
          </C.ExhibitionWrapper>
 
@@ -55,8 +30,8 @@ export default function ExhibitionMenuUI(props) {
             <C.ExhibitionSubTitle>Art Website 에서 작가의 "꿈"을 이루세요.</C.ExhibitionSubTitle>
             </C.ExhibitionTitle> 
               <C.ExhibitionColumn>
-              {list?.map((el, i) => (
-               <C.Column onClick={()=>onClickImage(el.postAuction,el.postSeq)} key={i}>
+              {props.list?.map((el, i) => (
+               <C.Column onClick={()=>props.onClickImage(el.postAuction,el.postSeq)} key={i}>
                 <C.ColumnImage src={el.postImageName}/>
                 <C.ColumnInfo>
                  <C.ColumnTitle>{el.postTitle}</C.ColumnTitle>

@@ -7,63 +7,7 @@ import { useEffect, useState, useLayoutEffect, useCallback } from 'react'
 import axios from 'axios'
 import LayoutPageNumber from '../../../layout/page-number/page-number.presenter'
 
-export default function ArtistMenuUI(props) {
- 
-  const [option , setOption] = useState(160); //초기값 false
-  var imageArray = [];
-  const back = process.env.NEXT_PUBLIC_URI
-  const [mapping, setMapping] = useState([]);
-  const [postMapping, setPostMapping] = useState([]);
-  const [name, setName] = useState();
-  const [isBookmark, setIsBookmark] = useState();
-  const [color, setColor] = useState(false);
-  const [memberSeq, setMemberSeq] = useState();
-  let dataArr;
-
-  useEffect(async() => {
-    const back = process.env.NEXT_PUBLIC_URI
-    setMemberSeq(sessionStorage.getItem('userSeq'));
-
-    const artist = await axios.get(`${back}artistAllList`) 
-    const artistData = artist?.data || [];
-    setMapping(artist.data);
-
-  }, [])
-
-  const onLoadBookmark = async (artistSeq, artistName) => {
-    const form = {
-      artistSeq,
-      memberSeq: memberSeq
-    }
-    console.log(form)
-    const load = axios.post(`${back}artistBookmarkGet`, form)
-    const loadArray = await Promise.resolve(load);
-    console.log(loadArray)
-    if(loadArray.data > 0) {
-      document.getElementById(artistName).style.color = `#E44C7E`;
-    } else {
-      document.getElementById(artistName).style.color = `gray`;
-    }
-  }
-
-  const onClickBook = async (artistSeq, artistName) => {
-    const form = {
-      artistSeq,
-      memberSeq: Number(memberSeq)
-    }
-    const load = axios.post(`${back}artistBookmarkGet`, form)
-    const loadArray = await Promise.resolve(load);
-    console.log(loadArray)
-    if(loadArray.data > 0) {
-      console.log(form)
-      axios.post(`${back}bookmarkDelete`, form)
-      document.getElementById(artistName).style.color = `gray`;
-    } else {
-      console.log(form)
-      axios.post(`${back}artistBookmark`, form)
-      document.getElementById(artistName).style.color = `#E44C7E`;
-    }
-  }
+export default function ArtistView(props) {
 
   return (
     <>  
@@ -74,8 +18,8 @@ export default function ArtistMenuUI(props) {
         </C.ArtistBanner>
  
         <C.ArtistWrapper>          
-        {mapping?.map((el, i) => ( 
-          <C.ArtistColumn key={i} onLoad={() => onLoadBookmark(el.artistSeq, el.artistName)}>
+        {props.mapping?.map((el, i) => ( 
+          <C.ArtistColumn key={i} onLoad={() => props.onLoadBookmark(el.artistSeq, el.artistName)}>
            <C.ProfileSection>
             <C.ProfileImage src={el.artistImage}></C.ProfileImage> 
             <C.Profile>
@@ -84,7 +28,7 @@ export default function ArtistMenuUI(props) {
               <C.Sns onClick={`${el.artistSns}`}><C.Image/></C.Sns>
               {/* icon color: #E44C7E; */}
               <C.Heart>
-                <FontAwesomeIcon id={el.artistName} onClick={() => onClickBook(el.artistSeq, el.artistName)} icon={faHeart} style={{color: "#E44C7E"}} />
+                <FontAwesomeIcon id={el.artistName} onClick={() => props.onClickBook(el.artistSeq, el.artistName)} icon={faHeart} style={{color: "#E44C7E"}} />
               </C.Heart>
             </C.Profile> 
             <C.ProfileInfo>

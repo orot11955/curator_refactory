@@ -1,8 +1,8 @@
-import WorkView from "../../../../../../src/components/commons/units/art/work/work.presenter"
+import WorkContainer from "../../../../../src/components/commons/units/art/work/work.container"
 export default function Work(){
     return (
         <>
-         <WorkView/>
+         <WorkContainer/>
         </>
     )
 }
