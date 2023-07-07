@@ -1,5 +1,5 @@
 import React from 'react';
-import ServiceView from './service.presenter';
+import ServiceMenuUI from './service.presenter';
 import * as C from './service.styles.js'
 import Link from 'next/link'
 import LayoutPageNumber from '../../../layout/page-number/page-number.presenter'
@@ -9,7 +9,7 @@ import { useState, useEffect } from 'react'
 import axios from 'axios'
 import { useRouter } from 'next/router';
 
-export default function ServiceContainer() {
+export default function ServiceMenu() {
 
   const router = useRouter();
   const [serviceList, setServiceList] = useState();
@@ -62,7 +62,7 @@ export default function ServiceContainer() {
     
     return (
         <>
-         <ServiceView
+         <ServiceMenuUI
             ServiceList={ServiceList}
             getToday={getToday}
             onClickMove={onClickMove}

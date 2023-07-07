@@ -1,4 +1,4 @@
-import SignUpView from '../../../../../../src/components/commons/units/sign/sign-up/sign.up.presenter' 
+import SignUpUI from '../../../../../../src/components/commons/units/sign/sign-up/sign.up.presenter' 
 import * as C from './sign.up.styles'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faCircleCheck } from "@fortawesome/free-solid-svg-icons"
@@ -13,7 +13,7 @@ import Router, { useRouter } from 'next/router'
 import path from 'path'
 import Post from '../../../../../../pages/units/sign/sign-up/address/index'
 
-export default function SignUpContainer() {
+export default function SignUp() {
 
   const back = process.env.NEXT_PUBLIC_URI
   const [icon, setIcon] = useState(false); 
@@ -305,7 +305,7 @@ const onChangeTel3 = useCallback((e) => {
 
     return (
         <>
-          <SignUpView
+          <SignUpUI
             back={back}
             icon={icon}
             iconF={iconF}

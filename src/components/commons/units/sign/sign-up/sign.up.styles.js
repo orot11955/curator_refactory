@@ -1,7 +1,5 @@
 import styled from "@emotion/styled";
 
-
-
 export const Icon = styled.div`
     color: green;
     margin-right: 5px;
@@ -19,10 +17,10 @@ export const Wrapper = styled.div`
 `
 export const SignUpForm = styled.form`
     width: 460px;
-    height: 660px;
-    padding: 110px;
+    height: 680px;
+    padding: 100px;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
     margin: 45px auto;
     box-shadow: 1px 1px 5px rgba(0,0,0,0.2);
@@ -42,7 +40,7 @@ export const SignUpInput = styled.div`
     border: 1px solid white;
 `
 export const SectionColumn = styled.div`
-    height: 110px;
+    height: 100%;
 `
 
 export const SectionRow = styled.div`
@@ -176,6 +174,6 @@ export const SignUpBtn = styled.button`
     font-size: 16px;
     width: 200px;
     height: 47px;
-    margin: 25px auto 0;
+    margin: 50px auto 0;
     border: none;
 `

@@ -2,7 +2,6 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faArrowLeft} from '@fortawesome/free-solid-svg-icons'
 import Link from 'next/link'
 import * as C from './board.new.styles'
-import { CKEditor } from 'ckeditor4-react'
 import React, {useCallback, useState, useEffect} from 'react';
 import axios from 'axios';
 import { useRouter } from 'next/router';

@@ -1,4 +1,4 @@
-import UserInfoView from "./user.info.presenter"
+import UserInfoUI from "./user.info.presenter"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faPlus } from '@fortawesome/free-solid-svg-icons'
 import { faEnvelope } from "@fortawesome/free-solid-svg-icons"
@@ -14,7 +14,7 @@ import ModalBasic from "../../modal"
 import ModalMove from "./modal/modal"
 
 
-export default function UserInfoContainer() {
+export default function UserInfo() {
 
     const router = useRouter();
     const [grade, setGrade] = useState();
@@ -164,7 +164,7 @@ export default function UserInfoContainer() {
     
     return (
         <>
-        <UserInfoView
+        <UserInfoUI
             router={router}
             grade={grade}
             nickName={nickName}

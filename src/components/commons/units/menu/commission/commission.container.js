@@ -1,4 +1,4 @@
-import CommissionView from "./commission.presenter";
+import CommissionMenuUI from "./commission.presenter";
 import Link from 'next/link';
 import LayoutPageNumber from '../../../layout/page-number/page-number.presenter'
 import axios from 'axios'
@@ -58,7 +58,7 @@ const onClickMove = (commSeq) => {
 
     return (
         <>
-        <CommissionView
+        <CommissionMenuUI
             router={router}
             back={back}
             commissionList={commissionList}

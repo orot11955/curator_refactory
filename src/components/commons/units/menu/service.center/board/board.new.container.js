@@ -1,4 +1,4 @@
-import ServiceBoardNewView from './board.new.presenter'
+import ServiceBoardNewUI from './board.new.presenter'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faArrowLeft} from '@fortawesome/free-solid-svg-icons'
 import Link from 'next/link'
@@ -8,7 +8,7 @@ import React, {useCallback, useState, useEffect} from 'react';
 import axios from 'axios';
 import { useRouter } from 'next/router';
 
-export default function ServiceBoardNewContainer() {
+export default function ServiceBoardNew() {
 
   const [cat, setCat] = useState("");
   const [title, setTitle] = useState("");
@@ -63,7 +63,7 @@ export default function ServiceBoardNewContainer() {
     
     return (
         <>
-         <ServiceBoardNewView
+         <ServiceBoardNewUI
             cat={cat}
             title={title}
             content={content}

@@ -1,4 +1,4 @@
- import styled from "@emotion/styled";
+import styled from "@emotion/styled";
 
 // 상품 테이블
 export const Table = styled.table `

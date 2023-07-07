@@ -1,4 +1,4 @@
-import ServiceBoardView from './board.view.presenter'
+import ServiceBoardViewUI from './board.view.presenter'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faArrowLeft } from '@fortawesome/free-solid-svg-icons'
 import Link from 'next/link'
@@ -8,7 +8,7 @@ import { useEffect, useState } from 'react'
 import axios from 'axios'
 import CommentView from '../../../admin/comment/comment.presenter'
 
-export default function ServiceBoardViewContainer() {
+export default function ServiceBoardView() {
 
   const router = useRouter();
   const [helpView, setHelpView] = useState();
@@ -30,7 +30,7 @@ export default function ServiceBoardViewContainer() {
     
     return (
         <>
-         <ServiceBoardView
+         <ServiceBoardViewUI
             router={router}
             helpView={helpView}
             back={back}

@@ -1,4 +1,4 @@
-import CommissionBoardView from './board.view.presenter'
+import CommissionBoardViewUI from './board.view.presenter'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faArrowLeft} from '@fortawesome/free-solid-svg-icons'
 import * as C from './board.view.styles'
@@ -6,7 +6,7 @@ import { useRouter } from 'next/router'
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 
-export default function CommissionBoardViewContainer() {
+export default function CommissionBoardView() {
 
   const router = useRouter();
   const [commissionView, setCommView] = useState();
@@ -30,7 +30,7 @@ export default function CommissionBoardViewContainer() {
     
     return (
         <>
-         <CommissionBoardView
+         <CommissionBoardViewUI
             router={router}
             commissionView={commissionView}
             back={back}

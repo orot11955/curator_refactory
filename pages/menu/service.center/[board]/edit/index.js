@@ -1,10 +1,10 @@
-import ServiceBoardEditContainer from "../../../../../src/components/commons/units/menu/service.center/board/board.edit.container"
+import ServiceBoardEdit from "../../../../../src/components/commons/units/menu/service.center/board/board.edit.container"
 
-export default function ServiceBoardEdit() {
+export default function ServiceBoardEditPage() {
 
     return (
         <>
-         <ServiceBoardEditContainer/>
+         <ServiceBoardEdit/>
         </>
     )
 }

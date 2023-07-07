@@ -1,10 +1,10 @@
-import CommissionContainer from "../../../src/components/commons/units/menu/commission/commission.container"
+import CommissionMenu from "../../../src/components/commons/units/menu/commission/commission.container"
 
-export default function Commission() {
+export default function CommissionMenuPage() {
 
     return (
         <>
-        <CommissionContainer/>
+        <CommissionMenu/>
         </>
     )
 }

@@ -1,9 +1,9 @@
-import CommissionBoardContainer from '../../../../src/components/commons/units/menu/commission/board/board.view.container'
+import CommissionBoardView from '../../../../src/components/commons/units/menu/commission/board/board.view.container'
 
-export default function CommissionBoard() {
+export default function CommissionBoardViewPage() {
     return (
         <>
-         <CommissionBoardContainer/>
+        <CommissionBoardView />
         </>
     )
 }

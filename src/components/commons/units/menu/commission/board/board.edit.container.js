@@ -1,4 +1,4 @@
-import CommissionBoardEdit from './board.edit.presenter'
+import CommissionBoardEditUI from './board.edit.presenter'
 import * as C from './board.edit.styles'
 import axios from 'axios'
 import React, {useCallback, useState, useEffect} from 'react';
@@ -34,7 +34,7 @@ export default function CommissionBoardEdit() {
 
     return (
         <>
-         <CommissionBoardEdit
+         <CommissionBoardEditUI
             back={back}
             artistList={artistList}
             artist={artist}

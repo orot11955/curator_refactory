@@ -30,7 +30,7 @@ const Post = (props) => {
         console.log(fullAddress)
         console.log(data.zonecode)
 
-        props.setcompany({
+        props.setCompany({
             ...props.company,
             address:fullAddress,
         })

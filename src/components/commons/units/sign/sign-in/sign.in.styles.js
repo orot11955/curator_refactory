@@ -92,12 +92,14 @@ export const FindUser = styled.span`
     }
 `
 export const InputLink = styled.div`
+    width: 350px;
+    height: 35px;
     display: flex;
-    flex-direction: row;
+    align-items: center;
     justify-content: space-between;
-    align-items: flex-end;
-    margin: 10px;
     font-size: 15px;
+    margin: 5px;
+
 `
 
 

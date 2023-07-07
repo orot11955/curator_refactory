@@ -1,9 +1,9 @@
-import ServiceBoardContainer from '../../../../src/components/commons/units/menu/service.center/board/board.view.container'
+import ServiceBoardView from '../../../../src/components/commons/units/menu/service.center/board/board.view.container'
 
-export default function ServiceBoard() {
+export default function ServiceBoardViewPage() {
     return (
         <>
-         <ServiceBoardContainer/>
+         <ServiceBoardView/>
         </>
     )
 }

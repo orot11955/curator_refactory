@@ -9,7 +9,7 @@ export const LinkBoard = styled.a`
 // 메뉴 - 작품의뢰 
 export const Wrapper = styled.div`
     width: 1200px;
-    height: 1200px;
+    height: auto;
     margin: auto;
     padding: 30px;   
 

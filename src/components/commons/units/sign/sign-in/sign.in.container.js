@@ -1,4 +1,4 @@
-import SignInView from "./sign.in.presenter"
+import SignInUI from "./sign.in.presenter"
 import axios from 'axios'
 import jwt from 'jsonwebtoken'; // jwt
 import Router, { useRouter } from 'next/router'
@@ -9,7 +9,7 @@ import Link from 'next/link'
 import { Cookies, useCookies } from 'react-cookie'  // cookie 
 import { useState, useCallback  } from 'react';
 
-export default function SignInContainer(props) {
+export default function SignIn(props) {
 
   const back = process.env.NEXT_PUBLIC_URI
   const [iconEmail, setIconEmail] = useState(false);
@@ -135,7 +135,7 @@ export default function SignInContainer(props) {
  
   return (
     <>  
-      <SignInView 
+      <SignInUI
         back={back}
         iconEmail={iconEmail}
         iconPw={iconPw}

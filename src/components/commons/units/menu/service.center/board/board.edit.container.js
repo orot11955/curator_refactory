@@ -1,4 +1,4 @@
-import ServiceBoardEditView from './board.edit.presenter';
+import ServiceBoardEditUI from './board.edit.presenter';
 import * as C from './board.edit.styles'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faArrowLeft } from '@fortawesome/free-solid-svg-icons'
@@ -27,7 +27,7 @@ export default function ServiceBoardEdit() {
 
     return (
         <>
-         <ServiceBoardEditView
+         <ServiceBoardEditUI
             router={router}
             helpView={helpView}
             helpSeq={helpSeq}

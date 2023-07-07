@@ -1,4 +1,4 @@
-import CommissionBoardNewView from './board.new.presenter'
+import CommissionBoardNewUI from './board.new.presenter'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faArrowLeft} from '@fortawesome/free-solid-svg-icons'
 import Link from 'next/link'
@@ -65,7 +65,7 @@ export default function CommissionBoardNew() {
 
     return (
         <>
-         <CommissionBoardNewView
+         <CommissionBoardNewUI
             artistList={artistList}
             commContent={commContent}
             artistSeq={artistSeq}

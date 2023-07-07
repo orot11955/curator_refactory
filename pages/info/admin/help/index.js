@@ -1,10 +1,10 @@
-import AdminHelpContainer from '../../../../src/components/commons/units/admin/admin-info/help/help.admin.container'
+import AdminInfoHelp from '../../../../src/components/commons/units/admin/admin-info/help/help.admin.container'
 
-export default function AdminHelp(){
+export default function AdminHelpPage(){
 
     return (
         <>
-         <AdminHelpContainer/>   
+         <AdminInfoHelp/>   
         </>
     )
 }

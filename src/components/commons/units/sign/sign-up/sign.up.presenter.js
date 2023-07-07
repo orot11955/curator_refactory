@@ -1,3 +1,4 @@
+import css from '@emotion/styled'
 import * as C from './sign.up.styles'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faCircleCheck } from "@fortawesome/free-solid-svg-icons"
@@ -11,8 +12,9 @@ import { Modal, Button } from "antd";
 import Router, { useRouter } from 'next/router'
 import path from 'path'
 import Post from '../../../../../../pages/units/sign/sign-up/address/index'
+import { Column } from '../../../layout/body/body.artist.styles';
 
-export default function SignUpView(props) {
+export default function SignUpUI(props) {
  
   return (
     <>  
@@ -36,11 +38,11 @@ export default function SignUpView(props) {
                 props.curr_cookie.get('checkTime') ?
                 <><C.EmailToken type='text' placeholder="인증번호 입력" onChange={props.onChangeToken} ></C.EmailToken><C.BtnToken type='button' onClick={props.onClickTokenCheck}>인증완료</C.BtnToken></>   
                 
-                : <p></p>
+                : <span></span>
               } 
               </C.EmailCheck>
             </C.SectionColumn>
-            <C.SectionRow style={{height:'40px' , margin:'0px'}}>
+            <C.SectionRow style={{height:'40px' , marginTop:'15px'}}>
               <C.Label>* 이름</C.Label>
               <C.Name type="text" onChange={props.onChangeName} /><br/> 
               <C.Label>* 닉네임</C.Label>

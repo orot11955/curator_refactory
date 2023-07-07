@@ -1,4 +1,4 @@
-import ArtistView from './artist.presenter' 
+import ArtistMenuUI from './artist.presenter' 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons'
 import { faHeart } from '@fortawesome/free-solid-svg-icons'
@@ -77,7 +77,7 @@ export default function ArtistMenu() {
 
     return (
         <>
-          <ArtistView
+          <ArtistMenuUI
           isOpen={isOpen}
           openModal={openModal}
           closeModal={closeModal}

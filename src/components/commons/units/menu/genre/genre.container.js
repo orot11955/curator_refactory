@@ -1,4 +1,4 @@
-import GenreView from "./genre.presenter"
+import GenreMenuUI from "./genre.presenter"
 import { useState, useEffect } from 'react'
 import axios from 'axios';
 import LayoutPageNumber from '../../../layout/page-number/page-number.presenter'
@@ -57,7 +57,7 @@ export default function GenreMenu() {
 
     return (
         <>
-        <GenreView
+        <GenreMenuUI
             back={back}
             genreList={genreList}
             postList={postList}

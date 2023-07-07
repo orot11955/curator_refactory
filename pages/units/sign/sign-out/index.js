@@ -12,6 +12,7 @@ export default function Signout () {
     useEffect(() => {
         sessionStorage.clear(); 
         localStorage.clear();
+        alert('로그아웃 되었습니다.');
       }, []);
     
     removeCookie('refreshToken', {path: "/"})

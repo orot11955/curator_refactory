@@ -1,4 +1,4 @@
-import ExhibitionView from './exhibition.presenter'
+import ExhibitionMenuUI from './exhibition.presenter'
 import LayoutPageNumber from '../../../layout/page-number/page-number.presenter'
 import * as C from './exhibition.styles' 
 import axios from 'axios'
@@ -36,7 +36,7 @@ export default function ExhibitionMenu() {
 
  return (
         <>
-          <ExhibitionView
+          <ExhibitionMenuUI
             router={router}
             back={back}
             mapping={mapping}
