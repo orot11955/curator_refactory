@@ -5,6 +5,7 @@ export default function AdminInfoArtistPage(){
     return (
         <>
          <AdminInfoArtist/>   
+         //
         </>
     )
 }
