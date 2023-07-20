@@ -63,6 +63,7 @@
 <p align="center"> - 회원 데이터 axios로 백엔드 restAPI 요청,응답 (데이터 추가,삭제)</p> 
 <p align="center">
 <img width="650" alt="스크린샷 2023-07-14 오전 10 06 35" src="https://github.com/m2jung/curator_front/assets/104767659/100e4112-ffa0-4bee-80cd-3b7ba57e41d1"> <img width="650" alt="스크린샷 2023-07-18 오전 11 34 08" src="https://github.com/m2jung/curator_refactory/assets/104767659/e354e3ea-d9c0-4aca-a810-4a222364c447">
+<img width="650" alt="스크린샷 2023-07-18 오전 11 58 40" src="https://github.com/m2jung/curator_refactory/assets/104767659/33c5fba3-79c2-4b38-9e62-1d7d24a4f3bd">
 
 
 
