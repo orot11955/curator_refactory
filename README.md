@@ -17,7 +17,7 @@
 <p align="center">- overflow:hidden 과 transition style로 전시회 배너 carousel 기능 <br> - grid 로 구성한 인기 작품 레이아웃과  useState로 onClick시 선택 이미지 띄우기 </p>
 <p align="center"> <img width="500" alt="스크린샷 2023-07-12 오후 5 33 16" src="https://github.com/m2jung/curator_front/assets/104767659/f94a96a2-a449-4bb6-8ab4-edfccc3179b9"></p>
 <br>
-<h3 align="center"> 로그인 / 회원가입 </h3>
+<h3 align="center"> ✔️ 로그인 / 회원가입 </h3>
 <p align="center"> - useState의 true, false 삼항연산자로 에러 메세지 출력 </p>
 <p align="center">
 <img width="500" alt="스크린샷 2023-07-18 오전 9 55 02" src="https://github.com/m2jung/curator_refactory/assets/104767659/e0057aca-0438-4078-9aa0-f17a969c2255"><img width="363" alt="스크린샷 2023-07-14 오전 10 02 53" src="https://github.com/m2jung/curator_refactory/assets/104767659/fecd602c-b0c2-4251-bb82-c498478a7b87">
