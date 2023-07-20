@@ -10,7 +10,7 @@
 <p align="center"> <a href="https://reactjs.org/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original-wordmark.svg" alt="react" width="40" height="40"/> </a><a href="https://nextjs.org/" target="_blank" rel="noreferrer"> <img src="https://cdn.worldvectorlogo.com/logos/nextjs-2.svg" alt="nextjs" width="40" height="40"/> </a> <a href="https://nodejs.org" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/nodejs/nodejs-original-wordmark.svg" alt="nodejs" width="40" height="40"/> </a>  </p>
 <br>
 <h3 align="center">담당역할</h3>
-<p align="center"> useState, useEffect등의 hook 과 Link 태그 routing 사용 <br> container와 presenter로 Component 폴더 구조 분리 <br> emotion/styled 를 사용한 view 전체 구현 <br> Axios를 사용한 백엔드 restAPI 요청,응답 (관리자,회원정보) <br> 로그인 유효성 검사, 에러메세지 출력 <br> hover, transition 등 css 속성 활용 </p>
+<p align="center"> useState, useEffect등의 hook 과 Link 태그, routing 사용 <br> container와 presenter로 Component 폴더 구조 분리 <br> emotion/styled 를 사용한 view 전체 구현 <br> Axios를 사용한 백엔드 restAPI 요청,응답 (관리자,회원정보) <br> 로그인 유효성 검사, 에러메세지 출력 <br> hover, transition 등 css 속성 활용 </p>
 <br>
 <br>
 <h3 align="center">웹 사이트 전체 메인 화면</h3>
