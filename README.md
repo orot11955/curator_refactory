@@ -9,7 +9,9 @@
 <p align="center"> 2023.05.30 ~ 06.21 </p>
 <br>
 <h3 align="center"> 📚 사용한 라이브러리 & 프레임워크 </h3>
-<p align="center"> <a href="https://reactjs.org/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original-wordmark.svg" alt="react" width="40" height="40"/> </a><a href="https://nextjs.org/" target="_blank" rel="noreferrer"> <img src="https://cdn.worldvectorlogo.com/logos/nextjs-2.svg" alt="nextjs" width="40" height="40"/> </a> <a href="https://nodejs.org" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/nodejs/nodejs-original-wordmark.svg" alt="nodejs" width="40" height="40"/> </a>  </p>
+<p align="center">
+<img width="210" alt="스크린샷 2023-07-27 오후 4 00 12" src="https://github.com/m2jung/curator_refactory/assets/104767659/31f1a6d2-d2b4-46a5-84c0-161c2b2721bb">
+</p>
 <br>
 <h3 align="center"> 📌 담당역할</h3>
 <p align="center"> useState, useEffect등의 hook 과 Link 태그,router 사용 <br> container와 presenter로 Component 폴더 구조 분리 <br> emotion/styled 를 사용한 view 전체 구현 <br> Axios를 사용한 백엔드 restAPI 요청,응답 (관리자,회원정보) <br> 로그인 유효성 검사, 에러메세지 출력 <br> hover, transition 등 css 속성 활용 </p>
