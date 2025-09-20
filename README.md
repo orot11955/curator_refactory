@@ -113,13 +113,6 @@
 </p>
 <br>
 
-<p align="center">
-  부족한 포트폴리오를 봐주셔서 
-  <h3 align="center">감사합니다! </h3>   <br>
-</p>
-<p align="center">
- <a href="https://github.com/m2jung/travel-front">🚞 두번째 프로젝트 바로가기 🚌 </a>
-</p>
 
 
 
