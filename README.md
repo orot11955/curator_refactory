@@ -13,7 +13,7 @@
 </p>
 <br>
 <h3 align="center"> 📌 담당역할</h3>
-<p align="center"> useState, useEffect등의 hook 과 Link 태그,router 사용 <br> container와 presenter로 Component 폴더 구조 분리 <br> emotion/styled 를 사용한 view 전체 구현 <br> Axios를 사용한 백엔드 restAPI 요청,응답 (관리자,회원정보) <br> 로그인 유효성 검사, 에러메세지 출력 <br> hover, transition 등 css 속성 활용 </p>
+<p align="center"> useState, useEffect등의 hook 과 Link 태그,router 사용 <br> container와 presenter로 Component 폴더 구조 분리 <br>  Axios를 사용한 백엔드 restAPI 요청,응답 (관리자,회원정보) <br> 로그인 유효성 검사, 에러메세지 출력 </p>
 <br>
 <hr>
 <br>
